@@ -1,0 +1,26 @@
+type Blog {
+  _id: ID!
+  title: String!
+  summary: String!
+  category: Category!
+  updatedAt: Float
+  createdAt: Float
+}
+input CreateBlogInput {
+  title: String!
+  summary: String!
+  category: String!
+}
+input UpdateBlogInput {
+  _id: String!
+  title: String!
+  summary: String!
+  category: String!
+}
+type Query {
+  getBlogList(categoryId: String): [Blog!]
+}
+type Mutation {
+  createBlog(blog: CreateBlogInput): Boolean!
+  updateBlog(blog: UpdateBlogInput): Boolean!
+}

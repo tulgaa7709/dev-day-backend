@@ -1,0 +1,20 @@
+type Category {
+  _id: ID
+  name: String
+  updatedAt: Float
+  createdAt: Float
+}
+input CreateCategoryInput {
+  name: String
+}
+input UpdateCategoryInput {
+  _id: String!
+  name: String
+}
+type Query {
+  getCategoryList: [Category!]
+}
+type Mutation {
+  createCategory(category: CreateCategoryInput): Boolean!
+  updateCategory(category: UpdateCategoryInput): Boolean!
+}
